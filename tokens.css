@@ -1,0 +1,120 @@
+/* Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V4 */
+/* Hallmark · genre: editorial · macrostructure: Long Document · theme: Studio · tone: quiet technical · anchor hue: green · enrichment: none · contrast: pass · mobile: pass */
+:root {
+  color-scheme: light dark;
+
+  --color-paper: oklch(97% 0.008 78);
+  --color-paper-raised: oklch(99% 0.006 78);
+  --color-paper-soft: oklch(94% 0.011 78);
+  --color-paper-pressed: oklch(91% 0.014 78);
+  --color-ink: oklch(20% 0.014 58);
+  --color-ink-soft: oklch(34% 0.013 58);
+  --color-muted: oklch(43% 0.012 58);
+  --color-rule: oklch(80% 0.014 72);
+  --color-rule-strong: oklch(62% 0.018 72);
+  --color-accent: oklch(48% 0.12 151);
+  --color-accent-soft: oklch(91% 0.035 151);
+  --color-accent-ink: oklch(98% 0.008 151);
+  --color-focus: oklch(45% 0.16 240);
+  --color-error: oklch(50% 0.17 28);
+  --color-error-soft: oklch(93% 0.028 28);
+  --color-success: oklch(46% 0.12 151);
+  --color-code: oklch(18% 0.018 246);
+  --color-code-ink: oklch(93% 0.012 246);
+  --color-selection: oklch(85% 0.065 151);
+  --color-overlay: oklch(18% 0.012 58 / 0.5);
+  --color-shadow: oklch(18% 0.012 58 / 0.12);
+
+  --font-display: "Newsreader", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  --font-body: "IBM Plex Sans", "BIZ UDPGothic", "Yu Gothic UI", sans-serif;
+  --font-mono: "JetBrains Mono", "Cascadia Code", "BIZ UDGothic", monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.375rem;
+  --text-xl: 1.75rem;
+  --text-2xl: clamp(2rem, 3vw, 2.75rem);
+
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-round: 999rem;
+
+  --rule-thin: 1px;
+  --rule-strong: 2px;
+
+  --dur-instant: 100ms;
+  --dur-fast: 180ms;
+  --dur-medium: 280ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --sidebar-width: 17rem;
+  --reading-width-standard: 92ch;
+  --reading-width-wide: 120ch;
+  --toolbar-height: 3.5rem;
+  --tabbar-height: 2.75rem;
+  --statusbar-height: 1.75rem;
+}
+
+:root[data-theme="dark"] {
+  --color-paper: oklch(15% 0.012 58);
+  --color-paper-raised: oklch(19% 0.014 58);
+  --color-paper-soft: oklch(22% 0.014 58);
+  --color-paper-pressed: oklch(27% 0.016 58);
+  --color-ink: oklch(94% 0.009 78);
+  --color-ink-soft: oklch(82% 0.011 78);
+  --color-muted: oklch(72% 0.012 78);
+  --color-rule: oklch(34% 0.016 58);
+  --color-rule-strong: oklch(52% 0.018 58);
+  --color-accent: oklch(70% 0.105 151);
+  --color-accent-soft: oklch(27% 0.045 151);
+  --color-accent-ink: oklch(16% 0.018 151);
+  --color-focus: oklch(74% 0.13 240);
+  --color-error: oklch(72% 0.13 28);
+  --color-error-soft: oklch(25% 0.05 28);
+  --color-success: oklch(70% 0.105 151);
+  --color-code: oklch(11% 0.018 246);
+  --color-code-ink: oklch(92% 0.012 246);
+  --color-selection: oklch(38% 0.065 151);
+  --color-overlay: oklch(8% 0.01 58 / 0.7);
+  --color-shadow: oklch(8% 0.01 58 / 0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-paper: oklch(15% 0.012 58);
+    --color-paper-raised: oklch(19% 0.014 58);
+    --color-paper-soft: oklch(22% 0.014 58);
+    --color-paper-pressed: oklch(27% 0.016 58);
+    --color-ink: oklch(94% 0.009 78);
+    --color-ink-soft: oklch(82% 0.011 78);
+    --color-muted: oklch(72% 0.012 78);
+    --color-rule: oklch(34% 0.016 58);
+    --color-rule-strong: oklch(52% 0.018 58);
+    --color-accent: oklch(70% 0.105 151);
+    --color-accent-soft: oklch(27% 0.045 151);
+    --color-accent-ink: oklch(16% 0.018 151);
+    --color-focus: oklch(74% 0.13 240);
+    --color-error: oklch(72% 0.13 28);
+    --color-error-soft: oklch(25% 0.05 28);
+    --color-success: oklch(70% 0.105 151);
+    --color-code: oklch(11% 0.018 246);
+    --color-code-ink: oklch(92% 0.012 246);
+    --color-selection: oklch(38% 0.065 151);
+    --color-overlay: oklch(8% 0.01 58 / 0.7);
+    --color-shadow: oklch(8% 0.01 58 / 0.35);
+  }
+}

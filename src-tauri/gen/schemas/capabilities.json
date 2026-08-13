@@ -1,0 +1,1 @@
+{"main-capability":{"identifier":"main-capability","description":"Permissions required by the main Markun window","local":true,"windows":["main"],"permissions":["core:default","dialog:allow-open","fs:allow-read-dir","fs:allow-lstat",{"identifier":"fs:allow-read-text-file","allow":[{"path":"**/*.md"},{"path":"**/*.markdown"}]},"opener:allow-open-url"]}}
