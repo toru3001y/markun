@@ -651,7 +651,10 @@ kbd {
   margin-bottom: 1.35em;
 }
 
-.markdown-body p {
+.markdown-body p,
+.markdown-body > ul,
+.markdown-body > ol,
+.markdown-body > blockquote {
   max-width: 72ch;
 }
 
@@ -713,6 +716,15 @@ kbd {
   font-family: var(--font-mono);
   font-size: 0.88em;
   overflow-wrap: break-word;
+}
+
+/*
+ * break-word の折り返し候補は min-content の計算に入らないため、表セル内の長いパスが列を縮めず、
+ * 隣の列が min-width まで潰れて表が横スクロールになる。表内だけ anywhere にする（詳細度が同じなので上の規則より後に置く）。
+ */
+.markdown-body th code,
+.markdown-body td code {
+  overflow-wrap: anywhere;
 }
 
 .markdown-body table {
