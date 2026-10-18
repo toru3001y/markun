@@ -58,6 +58,25 @@ describe("Markdown renderer", () => {
     expect(document.querySelectorAll(".code-block")).toHaveLength(1);
   });
 
+  it("renders <br> as a line break while keeping it literal inside code", async () => {
+    const markdown = [
+      "| 小課題 | 検証 |",
+      "|---|---|",
+      "| 03-a | 1. 一行目<br>2. 二行目<br/>3. 三行目<BR />4. 四行目 |",
+      "",
+      "コード内は `<br>` のまま。<span>タグ</span>"
+    ].join("\n");
+
+    const rendered = await renderMarkdown(markdown, "D:/docs/sample.md");
+    const document = new DOMParser().parseFromString(rendered.html, "text/html");
+
+    expect(document.querySelectorAll("td br")).toHaveLength(3);
+    expect(document.querySelectorAll("td")[1]?.textContent).not.toContain("<br");
+    expect(document.querySelector("p code")?.textContent).toBe("<br>");
+    expect(document.querySelector("span")).toBeNull();
+    expect(document.querySelector("p")?.textContent).toContain("<span>タグ</span>");
+  });
+
   it("emits a readable dark-palette color for every highlighted Java token", async () => {
     const rendered = await renderMarkdown(
       [
