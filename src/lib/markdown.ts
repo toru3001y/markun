@@ -110,6 +110,19 @@ export async function renderMarkdown(
     breaks: false
   });
 
+  // raw HTMLは無効のまま、表のセル内改行に使われる <br> だけを改行として扱う。
+  md.inline.ruler.before("html_inline", "markun_br", (state, silent) => {
+    const match = /^<br\s*\/?>/i.exec(state.src.slice(state.pos, state.posMax));
+    if (!match) {
+      return false;
+    }
+    if (!silent) {
+      state.push("hardbreak", "br", 0);
+    }
+    state.pos += match[0].length;
+    return true;
+  });
+
   const defaultFence =
     md.renderer.rules.fence ||
     ((tokens, index, options, _env, renderer) => renderer.renderToken(tokens, index, options));

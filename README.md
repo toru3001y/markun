@@ -70,7 +70,7 @@ npm run tauri build
 
 ## セキュリティ
 
-- raw HTMLは描画しません。
+- raw HTMLは描画しません（`<br>` のみ改行として扱います）。
 - 描画HTMLはDOMPurifyでサニタイズします。
 - 外部リンクはHTTP(S)だけをOSの既定ブラウザで開きます。
 - `..` を含む相対パスは拒否します。
