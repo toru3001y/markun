@@ -658,6 +658,14 @@ kbd {
   max-width: 72ch;
 }
 
+/* ワイドモードは本文も表示幅いっぱいに使い、1行の長い原稿やパスを途中で折り返さない。 */
+.markdown-body.is-wide p,
+.markdown-body.is-wide > ul,
+.markdown-body.is-wide > ol,
+.markdown-body.is-wide > blockquote {
+  max-width: none;
+}
+
 .markdown-body ul,
 .markdown-body ol {
   padding-left: 1.5em;
