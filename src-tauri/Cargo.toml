@@ -1,6 +1,6 @@
 [package]
 name = "markun"
-version = "0.2.3"
+version = "0.2.4"
 description = "A quiet desktop reader for local Markdown documents"
 authors = ["Markun contributors"]
 edition = "2021"
